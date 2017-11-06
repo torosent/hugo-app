@@ -22,4 +22,6 @@ RUN git clone https://github.com/${GITHUB_USERNAME}/${DOCKER_IMAGE_NAME}.git
 
 RUN hugo -s ${DOCKER_IMAGE_NAME} -d /usr/share/nginx/html/ --uglyURLs
 
+COPY ./nginx.conf /etc/nginx/nginx.conf
+
 CMD nginx -g "daemon off;"
